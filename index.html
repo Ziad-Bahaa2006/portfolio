@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziad Bahaa Elsayed | Data Science & AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#0a0a0f",
+                        foreground: "#f3f4f6",
+                        primary: "#6d28d9",
+                        accent: "#3b82f6",
+                        surface: "rgba(255, 255, 255, 0.03)",
+                        surfaceHover: "rgba(255, 255, 255, 0.08)",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #f3f4f6;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen relative overflow-x-hidden selection:bg-primary/30">
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter text-white">
+                Ziad Bahaa Elsayed<span class="text-primary">.</span>
+            </a>
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="text-sm text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="text-sm text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="text-sm text-gray-300 hover:text-white transition-colors">Projects</a>
+                <a href="#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="text-sm text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-b border-white/5 py-4 px-6 flex flex-col gap-4">
+            <a href="#about" class="text-gray-300 hover:text-white">About</a>
+            <a href="#skills" class="text-gray-300 hover:text-white">Skills</a>
+            <a href="#projects" class="text-gray-300 hover:text-white">Projects</a>
+            <a href="#services" class="text-gray-300 hover:text-white">Services</a>
+            <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50 z-0 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-12 mt-10 md:mt-0">
+            <div class="max-w-2xl md:w-3/5">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-xs text-primary font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                    Turning Data <br class="hidden md:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Into Decisions.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+                    Data Science & AI specialist focused on transforming raw data into clean insights and practical machine learning solutions.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 text-white font-medium transition-all flex items-center gap-2 group">
+                        View My Projects
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="px-6 py-3 rounded-lg glass-panel hover:bg-white/5 text-white font-medium transition-all">
+                        Let's Work Together
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 flex justify-center md:justify-end">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass-panel group">
+                    <!-- Spinning border effect -->
+                    <div class="absolute inset-0 rounded-full border-2 border-primary/30 border-t-primary animate-[spin_8s_linear_infinite] group-hover:border-t-accent transition-colors"></div>
+                    <!-- Image placeholder -->
+                    <img src="profile.png" alt="Ziad Bahaa" class="w-full h-full object-cover rounded-full bg-surfaceHover/50" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236d28d9\' stroke-width=\'1\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'></path><circle cx=\'12\' cy=\'7\' r=\'4\'></circle></svg>'"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">About Me</h2>
+                    <div class="space-y-4 text-gray-400 leading-relaxed text-lg">
+                        <p>I am an ambitious Data Science & AI professional, with an educational background from Alexandria National University. I enjoy solving real-world problems using data, programming, and machine learning.</p>
+                        <p>My approach focuses on turning messy, unstructured data into clean, useful datasets and building practical machine learning models to extract actionable insights.</p>
+                        <p>I am deeply interested in continuous learning and building projects that have a tangible impact. Whether it's data analysis, building predictive models, or developing data-driven applications, I'm always looking for the next challenge.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <i data-lucide="database" class="text-primary mb-4 w-8 h-8"></i>
+                        <h3 class="text-white font-semibold mb-2">Data Analysis</h3>
+                        <p class="text-sm text-gray-400">Extracting meaning from complex datasets.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl mt-0 sm:mt-8">
+                        <i data-lucide="brain-circuit" class="text-accent mb-4 w-8 h-8"></i>
+                        <h3 class="text-white font-semibold mb-2">Machine Learning</h3>
+                        <p class="text-sm text-gray-400">Building predictive and intelligent models.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <i data-lucide="code-2" class="text-primary mb-4 w-8 h-8"></i>
+                        <h3 class="text-white font-semibold mb-2">Practical Projects</h3>
+                        <p class="text-sm text-gray-400">Applying theory to real-world scenarios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 relative bg-surfaceHover/30">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Technical Arsenal</h2>
+                <p class="text-gray-400">The tools, languages, and frameworks I use to bring data to life.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Programming -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col h-full hover:border-primary/30 transition-colors">
+                    <h3 class="text-white font-semibold mb-4 text-lg border-b border-white/10 pb-2">Programming</h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Python</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Java</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">SQL</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">HTML</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">CSS</span>
+                    </div>
+                </div>
+                <!-- Data Science -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col h-full hover:border-primary/30 transition-colors">
+                    <h3 class="text-white font-semibold mb-4 text-lg border-b border-white/10 pb-2">Data Science</h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Pandas</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">NumPy</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Matplotlib</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Data Cleaning</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">EDA</span>
+                    </div>
+                </div>
+                <!-- Machine Learning -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col h-full hover:border-primary/30 transition-colors">
+                    <h3 class="text-white font-semibold mb-4 text-lg border-b border-white/10 pb-2">Machine Learning</h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Classification</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Regression</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Clustering</span>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col h-full hover:border-primary/30 transition-colors">
+                    <h3 class="text-white font-semibold mb-4 text-lg border-b border-white/10 pb-2">Tools & Databases</h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Jupyter</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Colab</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">Git & GitHub</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-md border border-white/5">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Featured Projects</h2>
+                <p class="text-gray-400 max-w-2xl">Practical applications of data science and machine learning solving real-world problems.</p>
+            </div>
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover:border-primary/40 transition-all group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-5 bg-surfaceHover/50 p-8 flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <h3 class="text-2xl font-bold text-white mb-2">AI Startup Success Predictor</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Scikit-learn</span>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">An end-to-end machine learning project that predicts whether a startup is likely to succeed or fail using Crunchbase startup data.</p>
+                            <div class="flex gap-4 mt-auto relative z-10">
+                                <a href="https://github.com/Ziad-Bahaa2006" target="_blank" class="flex items-center gap-2 text-sm text-white hover:text-primary transition-colors">
+                                    <i data-lucide="github" class="w-4 h-4"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">The Problem</h4>
+                                    <p class="text-gray-300">Identifying viable startups from a sea of data can be complex and error-prone.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Key Highlights</h4>
+                                    <p class="text-gray-300">Data preprocessing, exploratory data analysis, feature engineering, model training, evaluation, and prediction.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover:border-primary/40 transition-all group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-5 bg-surfaceHover/50 p-8 flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Advertising Click Prediction</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Streamlit</span>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">A machine learning application that predicts whether a user is likely to click on an advertisement.</p>
+                            <div class="flex gap-4 mt-auto relative z-10">
+                                <a href="https://github.com/Ziad-Bahaa2006" target="_blank" class="flex items-center gap-2 text-sm text-white hover:text-primary transition-colors">
+                                    <i data-lucide="github" class="w-4 h-4"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">The Problem</h4>
+                                    <p class="text-gray-300">Optimizing ad spend requires accurate prediction of user engagement.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Key Highlights</h4>
+                                    <p class="text-gray-300">Data preprocessing, model training, classification, and deployment using Streamlit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden hover:border-primary/40 transition-all group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-5 bg-surfaceHover/50 p-8 flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <h3 class="text-2xl font-bold text-white mb-2">COVID-19 Chest X-Ray Classification</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">TensorFlow/PyTorch</span>
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Computer Vision</span>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">A computer vision project exploring the classification of chest X-ray images using deep learning techniques.</p>
+                            <div class="flex gap-4 mt-auto relative z-10">
+                                <a href="https://github.com/Ziad-Bahaa2006" target="_blank" class="flex items-center gap-2 text-sm text-white hover:text-primary transition-colors">
+                                    <i data-lucide="github" class="w-4 h-4"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">The Problem</h4>
+                                    <p class="text-gray-300">Rapid and accurate detection of COVID-19 cases from medical imaging.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Key Highlights</h4>
+                                    <p class="text-gray-300">Image preprocessing, dataset analysis, duplicate detection, train/validation/test splitting, and deep learning experimentation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 relative bg-surfaceHover/30">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">What I Can Do</h2>
+                <p class="text-gray-400">Helping businesses and teams make sense of their data with reliable analytical solutions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="database" class="text-primary mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Data Cleaning</h3>
+                    <p class="text-gray-400 leading-relaxed">Transform messy datasets into structured and analysis-ready data.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="line-chart" class="text-accent mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Exploratory Data Analysis</h3>
+                    <p class="text-gray-400 leading-relaxed">Discover patterns, trends, correlations, and useful insights.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="pie-chart" class="text-primary mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Data Visualization</h3>
+                    <p class="text-gray-400 leading-relaxed">Create clear visualizations that make complex data easier to understand.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="brain-circuit" class="text-accent mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Machine Learning</h3>
+                    <p class="text-gray-400 leading-relaxed">Build practical classification, regression, and clustering models.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="file-code-2" class="text-primary mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Python Data Solutions</h3>
+                    <p class="text-gray-400 leading-relaxed">Develop clean, documented Python notebooks and data workflows.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i data-lucide="server" class="text-accent mb-4 w-8 h-8 transform group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-white text-xl font-semibold mb-3">Database Management</h3>
+                    <p class="text-gray-400 leading-relaxed">Design, optimize, and manage relational databases using SQL and PostgreSQL.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">My Approach</h2>
+                <p class="text-gray-400 max-w-2xl">A systematic process for turning raw data into valuable decisions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="relative group">
+                    <div class="text-6xl font-black text-white/5 mb-4 group-hover:text-primary/20 transition-colors">01</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-4">
+                        Understand
+                        <div class="hidden lg:block h-[1px] bg-white/10 flex-1 ml-4 group-hover:bg-primary/30 transition-colors"></div>
+                    </h3>
+                    <p class="text-gray-400">Understand the business problem and the available data.</p>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-white/5 mb-4 group-hover:text-primary/20 transition-colors">02</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-4">
+                        Prepare
+                        <div class="hidden lg:block h-[1px] bg-white/10 flex-1 ml-4 group-hover:bg-primary/30 transition-colors"></div>
+                    </h3>
+                    <p class="text-gray-400">Clean, transform, and prepare the data.</p>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-white/5 mb-4 group-hover:text-primary/20 transition-colors">03</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-4">
+                        Analyze & Model
+                        <div class="hidden lg:block h-[1px] bg-white/10 flex-1 ml-4 group-hover:bg-primary/30 transition-colors"></div>
+                    </h3>
+                    <p class="text-gray-400">Explore the data and build appropriate machine learning models.</p>
+                </div>
+                <div class="relative group">
+                    <div class="text-6xl font-black text-white/5 mb-4 group-hover:text-primary/20 transition-colors">04</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-4">Deliver</h3>
+                    <p class="text-gray-400">Deliver clear results, documentation, and practical recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] opacity-30 z-0 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Have a data problem to solve?</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Let's turn your data into something useful. I'm currently looking for freelance clients, internships, and collaborative opportunities.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:contact@example.com" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/%E2%80%AAziad-bahaa%E2%80%AC%E2%80%8F-902549260/" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 glass-panel hover:bg-white/5 text-white rounded-lg font-medium transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Ziad-Bahaa2006" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 glass-panel hover:bg-white/5 text-white rounded-lg font-medium transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-1">Ziad Bahaa Elsayed</h3>
+                <p class="text-gray-500 text-sm">Machine Learning & Data Analytics</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/Ziad-Bahaa2006" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/%E2%80%AAziad-bahaa%E2%80%AC%E2%80%8F-902549260/" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:contact@example.com" class="text-gray-500 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <div class="text-sm text-gray-600">
+                © 2026 Ziad Bahaa Elsayed. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize icons
+        lucide.createIcons();
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('glass-panel', 'border-b', 'border-white/5');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('glass-panel', 'border-b', 'border-white/5');
+                nav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body>
+</html>
